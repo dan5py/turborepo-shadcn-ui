@@ -5,7 +5,8 @@
   "types": "./index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint \"**/*.ts*\""
+    "lint": "eslint \"**/*.ts*\"",
+    "ui:add": "pnpm dlx shadcn-ui add"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
