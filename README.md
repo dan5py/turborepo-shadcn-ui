@@ -1,4 +1,6 @@
-# Turborepo starter with shadcn/ui
+# Turborepo starter with shadcn/ui#
+
+![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.2.1-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui%2Freleases%2Ftag%2Fshadcn-ui%25400.2.1)
 
 This is Turborepo starter with shadcn/ui pre-configured.
 
@@ -23,10 +25,13 @@ pnpm install
 ### Add ui components
 
 Use the pre-made script:
-  
-  ```sh
-  pnpm ui:add <component-name>
-  ```
+
+```sh
+pnpm ui:add <component-name>
+```
+
+> **Warning**
+> With the new version of `shadcn/ui` the path of the installed component cannot be changed. You need to move the file manually to the component folder (from `components/ui`).
 
 > This works just like the add command in the `shadcn/ui` CLI.
 
