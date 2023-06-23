@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
-    "ui:add": "pnpm dlx shadcn-ui add"
+    "ui:add": "pnpm dlx shadcn-ui@0.2.1 add"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
