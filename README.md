@@ -14,7 +14,7 @@ This is Turborepo starter with shadcn/ui pre-configured.
 Clone the repository:
 
 ```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui.git
+git clone https://github.com/dan5py/turborepo-shadcn-ui.git --branch npm
 ```
 
 Install dependencies:
