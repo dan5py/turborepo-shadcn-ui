@@ -15,9 +15,9 @@
     "resolveJsonModule": true,
     "strict": false,
     "target": "es5",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["../../packages/ui/*"]
+      "@/*": ["./*"],
+      "@ui/*": ["../../packages/ui/*"]
     }
   },
   "include": ["src", "next-env.d.ts"],
