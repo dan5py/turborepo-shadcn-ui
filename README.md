@@ -1,39 +1,28 @@
-# Turborepo starter with shadcn/ui#
+# Turborepo starter with shadcn/ui
 
 ![Static Badge](https://img.shields.io/badge/shadcn%2Fui-latest-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 
 This is Turborepo starter with shadcn/ui pre-configured.
 
 > **Note**
-> This example uses `pnpm` as package manager.
+> This example uses `npm` as package manager.
+
+[pnpm version](https://github.com/dan5py/turborepo-shadcn-ui)
 
 ## Using this example
 
 Clone the repository:
 
 ```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui
+git clone https://github.com/dan5py/turborepo-shadcn-ui.git
 ```
 
 Install dependencies:
 
 ```sh
 cd turborepo-shadcn-ui
-pnpm install
+npm install
 ```
-
-### Add ui components
-
-Use the pre-made script:
-
-```sh
-pnpm ui:add <component-name>
-```
-
-> **Warning**
-> With the new version of `shadcn/ui` the path of the installed component cannot be changed. You need to move the file manually to the component folder (from `components/ui`).
-
-> This works just like the add command in the `shadcn/ui` CLI.
 
 ## What's inside?
 
@@ -63,7 +52,7 @@ To build all apps and packages, run the following command:
 
 ```sh
 cd turborepo-shadcn-ui
-pnpm build
+npm run build
 ```
 
 ### Develop
@@ -72,7 +61,7 @@ To develop all apps and packages, run the following command:
 
 ```sh
 cd turborepo-shadcn-ui
-pnpm dev
+npm run dev
 ```
 
 ### Remote Caching
