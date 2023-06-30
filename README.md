@@ -7,12 +7,14 @@ This is Turborepo starter with shadcn/ui pre-configured.
 > **Note**
 > This example uses `pnpm` as package manager.
 
+[npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
+
 ## Using this example
 
 Clone the repository:
 
 ```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui
+git clone https://github.com/dan5py/turborepo-shadcn-ui.git
 ```
 
 Install dependencies:
