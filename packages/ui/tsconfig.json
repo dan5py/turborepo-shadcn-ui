@@ -6,6 +6,7 @@
     "baseUrl": ".",
     "paths": {
       "@ui/*": ["./*"]
-    }
+    },
+    "isolatedModules": false
   }
 }

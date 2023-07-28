@@ -6,9 +6,11 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
-    "ui:add": "pnpm dlx shadcn-ui@latest add"
+    "ui:add": "pnpm dlx shadcn-ui@latest add",
+    "postui:add": "ts-node --esm ./scripts/generateIndex.mts"
   },
   "devDependencies": {
+    "@types/node": "^17.0.12",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.14",
