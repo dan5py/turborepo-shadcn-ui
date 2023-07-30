@@ -32,9 +32,6 @@ Use the pre-made script:
 pnpm ui:add <component-name>
 ```
 
-> **Warning**
-> With the new version of `shadcn/ui` the path of the installed component cannot be changed. You need to move the file manually to the component folder (from `components/ui`).
-
 > This works just like the add command in the `shadcn/ui` CLI.
 
 ## What's inside?
