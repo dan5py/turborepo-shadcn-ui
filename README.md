@@ -24,6 +24,16 @@ cd turborepo-shadcn-ui
 npm install
 ```
 
+### Add ui components
+
+Use the pre-made script:
+
+```sh
+npm ui:add <component-name> -- <options>
+```
+
+> This works just like the add command in the `shadcn/ui` CLI.
+
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
