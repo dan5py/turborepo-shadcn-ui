@@ -1,6 +1,6 @@
 {
-  "name": "turborepo-shadcn-ui",
-  "version": "0.1.1",
+  "name": "dm-turborepo",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -10,11 +10,11 @@
     "ui:add": "pnpm --filter ui ui:add"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
+    "@turbo/gen": "^1.10.15",
+    "eslint": "^8.51.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.5.1",
-    "turbo": "latest"
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.15"
   },
   "packageManager": "pnpm@7.15.0"
 }
