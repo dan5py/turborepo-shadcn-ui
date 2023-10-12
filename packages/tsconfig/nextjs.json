@@ -20,6 +20,7 @@
       "@ui/*": ["../../packages/ui/*"],
       "@ui/components/*": ["../../packages/ui/components/*"],
       "@ui/components/shared/*": ["../../packages/ui/components/shared/*"],
+      "@ui/types*": ["../../packages/ui/types/*"],
       "@ui/assets/*": ["../../packages/ui/assets/*"]
     }
   },
