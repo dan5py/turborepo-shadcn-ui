@@ -1,5 +1,13 @@
-import AppHeader from "@/components/widgets/AppHeader";
 import "@ui/styles/globals.css";
+import '@/app/local.css'
+import AppHeader from "@/components/widgets/AppHeader";
+import { Metadata } from "next";
+import SubStatusWatcher from "@/components/entities/user/SubStatus.watcher";
+import StateProvider from "@/components/StateProvider";
+
+export const metadata: Metadata = {
+  title: 'Dark Material'
+}
 
 export default function RootLayout({
   children,
@@ -7,11 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className='dark'>
-        <AppHeader />
-        {children}
-      </body>
-    </html>
+    <StateProvider>
+      <html lang="en">
+        <body className='min-h-screen dark'>
+          <SubStatusWatcher />
+          <AppHeader />
+          {children}
+        </body>
+      </html>
+    </StateProvider>
   );
 }
