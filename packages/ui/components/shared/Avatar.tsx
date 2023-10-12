@@ -7,11 +7,12 @@ type Props = {
     size: number
     isSub?: boolean
     direction?: 'left' | 'right'
+    fallbackImage?: any
     noLabel?: boolean
 }
-const Avatar = ({ size, src, isSub, direction='left', noLabel=false }: Props) => {
+const Avatar = ({ size, src, isSub, fallbackImage, direction='left', noLabel=false }: Props) => {
     if (!isSub) {
-        return <Image src={src ? src : '../../assets/EmptyUser.svg'} className="rounded-full shrink-0" width={size} height={size} alt={v4()} />
+        return <Image src={src ? src : fallbackImage} className="rounded-full bg-neutral-900 shrink-0" width={size} height={size} alt={v4()} />
     }
     return (
         <div className={`flex items-center ${direction === 'left' ? 'flex-row' : 'flex-row-reverse'} h-full shrink-0 gap-2 w-fit`}>

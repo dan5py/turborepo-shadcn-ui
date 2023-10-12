@@ -19,7 +19,8 @@
       "@/*": ["./*"],
       "@ui/*": ["../../packages/ui/*"],
       "@ui/components/*": ["../../packages/ui/components/*"],
-      "@ui/components/shared/*": ["../../packages/ui/components/shared/*"]
+      "@ui/components/shared/*": ["../../packages/ui/components/shared/*"],
+      "@ui/assets/*": ["../../packages/ui/assets/*"]
     }
   },
   "include": ["src", "next-env.d.ts"],
