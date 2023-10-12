@@ -1,3 +1,4 @@
+import AppHeader from "@/components/widgets/AppHeader";
 import "@ui/styles/globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='dark'>{children}</body>
+      <body className='dark'>
+        <AppHeader />
+        {children}
+      </body>
     </html>
   );
 }

@@ -36,7 +36,7 @@
   }
  
   .dark {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
  
     --card: 0 0% 3.9%;
@@ -72,5 +72,26 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .second-font {
+    font-family: var(--second-font);
+  }
+  * {
+    font-family: var(--root-font);
+  }
+  
+  ::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 9999px;
+    @apply bg-neutral-900;
   }
 }
