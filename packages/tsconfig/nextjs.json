@@ -18,8 +18,8 @@
     "paths": {
       "@/*": ["./*"],
       "@ui/*": ["../../packages/ui/*"],
-      "@ui/components/*": ["../../packages/ui/components/ui/*"],
-      "@ui/components/ui/*": ["../../packages/ui/components/ui/*"]
+      "@ui/components/*": ["../../packages/ui/components/*"],
+      "@ui/components/shared/*": ["../../packages/ui/components/shared/*"]
     }
   },
   "include": ["src", "next-env.d.ts"],
