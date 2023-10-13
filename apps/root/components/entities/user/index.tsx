@@ -1,17 +1,17 @@
 'use client'
+import empty from '@ui/assets/EmptyUser.svg'
+import dm from '@ui/assets/dm.svg'
 
 import { Button } from "@ui/components/ui/button"
 import { auth } from "@ui/utils/app"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { BiGridAlt, BiLoaderAlt, BiLogOut, BiUser } from "react-icons/bi"
-import empty from '@ui/assets/EmptyUser.svg'
 import Avatar from '@ui/components/shared/Avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@ui/components/ui/dropdown-menu'
 import { useAppDispatch, useAppSelector } from "../store/store"
 import { BsPatchCheck } from 'react-icons/bs'
 import { MdOutlineOpenInNew } from 'react-icons/md'
 import SubLabel from "@ui/components/shared/SubLabel"
-import dm from '@ui/assets/dm.svg'
 import Image from "next/image"
 import { Session } from "@ui/types"
 import { setSession } from "@ui/components/entities/session/session"

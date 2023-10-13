@@ -6,8 +6,8 @@
     "baseUrl": ".",
     "paths": {
       "@ui/*": ["./*"],
-      "@ui/types*": ["./types*"],
-      "@ui/assets*": ["./assets*"],
+      "@ui/types": ["./types/index.ts"],
+      "@ui/assets/*": ["./assets/*"],
     }
   }
 }
