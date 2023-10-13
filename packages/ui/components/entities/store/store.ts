@@ -1,14 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
-import { reducer } from '@ui/components/entities/store/store'
-import UserReducer from '@/components/entities/user/store'
-// import SessionReducer from '@/components/entities/session/session'
+import SessionReducer from '@ui/components/entities/session/session'
+// import UserReducer from '@/components/entities/user/store'
 
+export const reducer = {
+    watcher: SessionReducer,
+}
 export const store = configureStore({
-    reducer: {
-        ...reducer,
-        user: UserReducer
-    },
+    reducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false
     })

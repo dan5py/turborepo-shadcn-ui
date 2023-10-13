@@ -70,6 +70,13 @@ export type Thumbnail = {
     link: string
 }
 
+export type Session = {
+    sid: string
+    disabled: boolean
+    uid: string | null
+    uids: string[]
+}
+
 export type ShotForUpload = {
     title: string
     rootBlock: ImageBlock | VideoBlock

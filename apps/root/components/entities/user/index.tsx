@@ -7,15 +7,28 @@ import { BiGridAlt, BiLoaderAlt, BiLogOut, BiUser } from "react-icons/bi"
 import empty from '@ui/assets/EmptyUser.svg'
 import Avatar from '@ui/components/shared/Avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@ui/components/ui/dropdown-menu'
-import { useAppSelector } from "../store/store"
-import { BsPatchCheck, BsPatchCheckFill } from 'react-icons/bs'
+import { useAppDispatch, useAppSelector } from "../store/store"
+import { BsPatchCheck } from 'react-icons/bs'
 import { MdOutlineOpenInNew } from 'react-icons/md'
 import SubLabel from "@ui/components/shared/SubLabel"
 import dm from '@ui/assets/dm.svg'
 import Image from "next/image"
+import { Session } from "@ui/types"
+import { setSession } from "@ui/components/entities/session/session"
+import SessionSection from "./ui/SessionSection"
 const UserSection = () => {
     const [user, loading] = useAuthState(auth)
     const isSub = useAppSelector(state => state.user.isSubscriber)
+    const session = useAppSelector(state => state.watcher.session)
+    const dispatch = useAppDispatch()
+    const getSignOut = () => {
+        const updatedSession: Session = {
+            ...session,
+            uid: null
+        }
+        dispatch(setSession(updatedSession))
+        auth.signOut()
+    }
     if (loading) return <div className="rounded-full shrink-0 animate-pulse w-9 h-9 bg-neutral-900"/>
     if (!user) return (
         <Button ><BiUser className='mr-1' size={15} />Войти</Button>
@@ -38,9 +51,10 @@ const UserSection = () => {
                 <hr className='border-neutral-700' />
                 <DropdownMenuItem><BiUser className='mr-2' />Профиль</DropdownMenuItem>
                 <DropdownMenuItem><BiGridAlt className='mr-2' />Приложения</DropdownMenuItem>
+                <SessionSection />
                 <DropdownMenuSeparator/>
                     <DropdownMenuItem><Image src={dm} width={16} className="mr-1" height={16} alt='dm-logo' /><span>DarkMaterial</span><MdOutlineOpenInNew className='ml-auto' /></DropdownMenuItem>
-                    <DropdownMenuItem><BiLogOut className='mr-2' />Выйти из профиля</DropdownMenuItem>
+                    <DropdownMenuItem onClick={getSignOut}><BiLogOut className='mr-2' />Выйти из профиля</DropdownMenuItem>
                 <DropdownMenuSeparator/>
                 {
                     isSub
