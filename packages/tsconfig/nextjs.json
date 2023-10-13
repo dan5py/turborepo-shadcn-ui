@@ -21,7 +21,9 @@
       "@ui/components/*": ["../../packages/ui/components/*"],
       "@ui/components/shared/*": ["../../packages/ui/components/shared/*"],
       "@ui/types*": ["../../packages/ui/types/*"],
-      "@ui/assets/*": ["../../packages/ui/assets/*"]
+      "@ui/helpers*": ["../../packages/ui/helpers/*"],
+      "@ui/assets/*": ["../../packages/ui/assets/*"],
+      "@ui/assets/placeholders*": ["../../packages/ui/assets/placeholders*"]
     }
   },
   "include": ["src", "next-env.d.ts"],

@@ -95,3 +95,24 @@
     @apply bg-neutral-900;
   }
 }
+
+.shots_mini_grid {
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+
+.shots_grid {
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+
+@media (min-width: 1440px) {
+  .shots_grid {
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  }
+}
+
+@media (min-width: 1600px) {
+  .shots_grid {
+    grid-template-columns: repeat(auto-fill,minmax(336px,1fr));
+  }
+
+}

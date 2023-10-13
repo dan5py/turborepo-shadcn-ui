@@ -11,8 +11,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "ahooks": "^3.7.8",
-    "firebase": "^10.4.0",
-    "next": "^13.4.1",
+    "firebase": "^10.5.0",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
@@ -21,14 +21,14 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^17.0.12",
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
-    "autoprefixer": "^10.4.14",
+    "@types/node": "^20.8.5",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "autoprefixer": "^10.4.16",
     "eslint-config-custom": "workspace:*",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
     "tsconfig": "workspace:*",
-    "typescript": "^4.5.3"
+    "typescript": "^5.2.2"
   }
 }

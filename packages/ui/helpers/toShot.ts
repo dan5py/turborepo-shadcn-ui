@@ -1,0 +1,1 @@
+export const toShot = (shotId: string) => `/view?s=${shotId}`
