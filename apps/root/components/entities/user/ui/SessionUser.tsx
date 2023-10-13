@@ -48,7 +48,7 @@ const SessionUser = ({ uid, setExpand }: Props) => {
         fetchData()
     },[uid])
     if (!userData) return (
-        <div className="flex items-center w-full gap-2 h-14">
+        <div className="flex items-center w-full gap-2 h-fit">
             <div className='w-8 h-8 rounded-full shrink-0 bg-neutral-800' />
             <div className="flex flex-col justify-center w-full h-full gap-1">
                 <div className="w-1/2 h-4 rounded-full bg-neutral-800" />
@@ -57,7 +57,7 @@ const SessionUser = ({ uid, setExpand }: Props) => {
         </div>
     )
     return (
-        <div onClick={changeUser} className="flex items-center w-full gap-2 h-fit">
+        <div onClick={changeUser} className="flex items-center w-full gap-2 cursor-pointer h-fit">
             <div className="relative shrink-0">
                 <Avatar src={userData?.photoUrl} fallbackImage={fallbackImg} size={32} />
                 {
@@ -67,7 +67,7 @@ const SessionUser = ({ uid, setExpand }: Props) => {
                     </div>
                     : isSelected && 
                     <div className="absolute top-0 left-0 flex items-center justify-center w-8 h-8 bg-green-600 rounded-full">
-                        <BiCheck className='text-white' width={18} height={18} />
+                        <BiCheck className='text-white shrink-0' width={28} height={28} />
                     </div>
                 }
             </div>

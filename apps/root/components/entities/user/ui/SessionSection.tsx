@@ -11,24 +11,21 @@ const SessionSection = () => {
     if (session.uids.length <= 1) return 0
     if (!expand) {
         return (
-            <>
-                <DropdownMenuLabel onClick={() => setExpand(true)} className='flex items-center justify-between gap-2'>
-                    <div className="flex items-center gap-2 shrink-0">
-                        <PiUsersThree size={17} />
-                        <span className='font-medium text-neutral-200'>Другие аккаунты</span>
-                    </div>
-                    <BiChevronDown className='shrink-0' size={17} />
-                </DropdownMenuLabel>
-                <hr className='border-neutral-700' />
-            </>
+            <DropdownMenuLabel onClick={() => setExpand(true)} className='flex items-center justify-between gap-2 rounded-sm cursor-pointer hover:bg-neutral-800'>
+                <div className="flex items-center shrink-0">
+                    <PiUsersThree size={14} className='mr-2' />
+                    <span className='font-normal text-neutral-200'>Другие аккаунты</span>
+                </div>
+                <BiChevronDown className='shrink-0' size={17} />
+            </DropdownMenuLabel>
         )
     }
     return (
         <DropdownMenuGroup className='border rounded-xl bg-neutral-900 border-neutral-800'>
-            <DropdownMenuLabel onClick={() => setExpand(false)} className='flex items-center justify-between gap-2'>
-                <div className="flex items-center gap-2 shrink-0">
-                    <PiUsersThree size={17} />
-                    <span className='font-medium text-neutral-200'>Скрыть аккаунты</span>
+            <DropdownMenuLabel onClick={() => setExpand(false)} className='flex items-center justify-between gap-2 cursor-pointer'>
+                <div className="flex items-center gap-1 shrink-0">
+                    <PiUsersThree size={14} className='mr-2' />
+                    <span className='font-normal text-neutral-200'>Скрыть аккаунты</span>
                 </div>
                 <BiChevronUp className='shrink-0' size={17} />
             </DropdownMenuLabel>
