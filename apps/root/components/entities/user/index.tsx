@@ -16,11 +16,14 @@ import Image from "next/image"
 import { Session } from "@ui/types"
 import { setSession } from "@ui/components/entities/session/session"
 import SessionSection from "./ui/SessionSection"
+import Link from "next/link"
 const UserSection = () => {
     const [user, loading] = useAuthState(auth)
     const isSub = useAppSelector(state => state.user.isSubscriber)
     const session = useAppSelector(state => state.watcher.session)
     const dispatch = useAppDispatch()
+    const redirect_url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://darkmaterial.space'
+    const authLink = `https://auth.darkmaterial.space/auth/signin?back_url=${redirect_url}`
     const getSignOut = () => {
         const updatedSession: Session = {
             ...session,
@@ -31,7 +34,7 @@ const UserSection = () => {
     }
     if (loading) return <div className="rounded-full shrink-0 animate-pulse w-9 h-9 bg-neutral-900"/>
     if (!user) return (
-        <Button ><BiUser className='mr-1' size={15} />Войти</Button>
+        <Link href={authLink}><Button><BiUser className='mr-1' size={15} />Войти</Button></Link>
     )
     return (
         <DropdownMenu>
@@ -41,15 +44,15 @@ const UserSection = () => {
                 </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="p-4 w-60 rounded-xl">
-                <DropdownMenuLabel className='flex flex-col justify-center w-full gap-2'>
+                <DropdownMenuLabel className='flex flex-col justify-center w-full pt-0'>
                     <div className="flex items-center w-full gap-1 h-fit">
                         <span className='text-base font-semibold text-neutral-200 line-clamp-1'>{user.displayName || 'Пользователь'}</span>
                         { isSub && <SubLabel mini /> }
                     </div>
                     <span className='text-xs font-normal text-neutral-400 line-clamp-1'>{user.email}</span>
                 </DropdownMenuLabel>
-                <hr className='border-neutral-700' />
-                <DropdownMenuItem><BiUser className='mr-2' />Профиль</DropdownMenuItem>
+                <DropdownMenuSeparator/>
+                <Link href='/profile'><DropdownMenuItem><BiUser className='mr-2' />Профиль</DropdownMenuItem></Link>
                 <DropdownMenuItem><BiGridAlt className='mr-2' />Приложения</DropdownMenuItem>
                 <SessionSection />
                 <DropdownMenuSeparator/>
@@ -63,7 +66,6 @@ const UserSection = () => {
                     </DropdownMenuItem>
                     : <DropdownMenuItem><span className="mx-auto text-neutral-400">Вы в плюсе</span></DropdownMenuItem>
                 }
-                {/* { <SessionSection /> } */}
             </DropdownMenuContent>
         </DropdownMenu>
     )

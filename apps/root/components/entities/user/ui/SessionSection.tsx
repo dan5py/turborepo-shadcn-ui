@@ -8,7 +8,7 @@ import { DropdownMenuGroup, DropdownMenuLabel } from '@ui/components/ui/dropdown
 const SessionSection = () => {
     const [expand, setExpand] = useState<boolean>(false)
     const session = useAppSelector(state => state.watcher.session)
-    if (session.uids.length <= 1) return 0
+    if (session.uids.length <= 1) return null
     if (!expand) {
         return (
             <DropdownMenuLabel onClick={() => setExpand(true)} className='flex items-center justify-between gap-2 rounded-sm cursor-pointer hover:bg-neutral-800'>
