@@ -38,7 +38,7 @@ const GeneratedThumbnail = ({ thumbnailLink, videoLink }: GenerateThumbnailProps
     if (process.env.NODE_ENV === 'development') return (
         <div className="w-full h-full rounded-xl aspect-[4/3] bg-neutral-900" />
     )
-    if (playVideo) return <div onMouseLeave={() => {setPlayVideo(false); setDelay(undefined)}}><LoadedVideo link={process.env.NODE_ENV === 'development' ? '@ui/assets/placeholders/dev-video.mp4' : cdn(videoLink)} autoPlay /></div>
+    if (playVideo) return <div onMouseLeave={() => {setPlayVideo(false); setDelay(undefined)}}><LoadedVideo link={cdn(videoLink)} autoPlay /></div>
     return (
         <>
             { delay !== undefined && <span onMouseEnter={() => setDelay(2000)}

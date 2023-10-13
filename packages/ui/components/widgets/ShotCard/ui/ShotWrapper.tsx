@@ -1,4 +1,4 @@
-import { DocShotData } from '@ui/types'
+import { DocShotData } from '@ui/types/index'
 import { Suspense } from 'react'
 import { BiPlay } from 'react-icons/bi'
 import ShotInfo from './ShotInfo'
@@ -20,7 +20,7 @@ const ShotWrapper = ({ children, shot }: Props) => {
             <Suspense fallback={<div className='absolute bottom-0 left-0 w-full h-8 rounded-xl bg-neutral-800'/>}>
             {
                 !shot.isDraft &&
-                // @ts-expect-error Async Server Component
+                // @ts-ignore
                 <ShotInfo shot={shot} />
             }
             </Suspense>

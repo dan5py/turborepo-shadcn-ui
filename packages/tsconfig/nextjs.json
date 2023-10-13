@@ -20,7 +20,7 @@
       "@ui/*": ["../../packages/ui/*"],
       "@ui/components/*": ["../../packages/ui/components/*"],
       "@ui/components/shared/*": ["../../packages/ui/components/shared/*"],
-      "@ui/types*": ["../../packages/ui/types/*"],
+      "@ui/types": ["../../packages/ui/types/index.ts"],
       "@ui/helpers*": ["../../packages/ui/helpers/*"],
       "@ui/assets/*": ["../../packages/ui/assets/*"],
       "@ui/assets/placeholders*": ["../../packages/ui/assets/placeholders*"]
