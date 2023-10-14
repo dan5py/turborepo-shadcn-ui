@@ -25,7 +25,7 @@ type Props = {
 const ShotsWidget = async({ hideNav=false }: Props) => {
     const shots = await getPopularChunk()
     return (
-        <div className='flex flex-col w-full gap-4 mx-auto max-w-7xl h-fit'>
+        <div className='flex flex-col w-full gap-4 h-fit'>
             {
                 hideNav === false &&
                 <div className="flex items-center justify-center w-full gap-4 h-fit">
@@ -36,9 +36,10 @@ const ShotsWidget = async({ hideNav=false }: Props) => {
                     <Link href='https://bum.darkmaterial.space'><Button variant='secondary'>Больше</Button></Link>
                 </div>
             }
-            <ol className="grid w-full gap-4 shrink-0 h-fit shots_grid">
+            <ol className="grid w-full gap-8 shrink-0 h-fit shots_grid">
                 {
-                    shots.map(shot => 
+                    shots &&
+                    shots.filter((_, index) => index <= 14).map(shot => 
                         <ShotCard key={shot.doc_id} shot={shot} />
                     )
                 }

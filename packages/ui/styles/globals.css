@@ -34,6 +34,8 @@
  
     --radius: 0.5rem;
 
+    --shot-width-mini: 250px;
+
     --shot-width-small: 204px;
     --shot-width-medium: 270px;
     --shot-width-large: 336px;
@@ -101,7 +103,7 @@
 }
 
 .shots_mini_grid {
-  grid-template-columns: repeat(auto-fill, minmax(var(--shot-width-small), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(var(--shot-width-mini), 1fr));
 }
 
 .shots_grid {
