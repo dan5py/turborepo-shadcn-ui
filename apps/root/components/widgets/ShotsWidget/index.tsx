@@ -19,19 +19,24 @@ const getPopularChunk = async(): Promise<DocShotData[]> => {
       return []
     }
   }
-
-const ShotsWidget = async() => {
+type Props = {
+    hideNav?: boolean
+}
+const ShotsWidget = async({ hideNav=false }: Props) => {
     const shots = await getPopularChunk()
     return (
-        <div className='flex flex-col w-full max-w-6xl gap-4 mx-auto h-fit'>
-            <div className="flex items-center justify-center w-full gap-4 h-fit">
-                <div className="flex items-center w-full gap-2 h-fit">
-                    <Image src={bum} width={36} height={36} alt='bum-service-logo' />
-                    {/* <span className="text-2xl font-bold">Dey</span> */}
+        <div className='flex flex-col w-full gap-4 mx-auto max-w-7xl h-fit'>
+            {
+                hideNav === false &&
+                <div className="flex items-center justify-center w-full gap-4 h-fit">
+                    <div className="flex items-center w-full gap-2 h-fit">
+                        <Image src={bum} width={36} height={36} alt='bum-service-logo' />
+                        {/* <span className="text-2xl font-bold">Dey</span> */}
+                    </div>
+                    <Link href='https://bum.darkmaterial.space'><Button variant='secondary'>Больше</Button></Link>
                 </div>
-                <Link href='https://bum.darkmaterial.space'><Button variant='secondary'>Больше</Button></Link>
-            </div>
-            <ol className="grid w-full gap-4 shrink-0 h-fit shots_mini_grid">
+            }
+            <ol className="grid w-full gap-4 shrink-0 h-fit shots_grid">
                 {
                     shots.map(shot => 
                         <ShotCard key={shot.doc_id} shot={shot} />
