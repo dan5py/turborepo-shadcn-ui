@@ -1,11 +1,11 @@
-import { ShortUserData } from "@/types"
 import { createSlice } from "@reduxjs/toolkit"
+import { ShortUserData } from "@ui/types"
 
 
 
 
 type InitState = {
-    userInProcess: ShortUserData | null
+    userInProcess: Partial<ShortUserData> | null
 }
 
 const initialState: InitState = {
