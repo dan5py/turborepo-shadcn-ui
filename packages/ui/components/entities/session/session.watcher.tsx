@@ -8,16 +8,18 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { signInWithCustomToken } from 'firebase/auth'
 import { doc, getDoc, onSnapshot } from 'firebase/firestore'
 import { isEqual } from 'lodash'
-import { useSearchParams } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
 import { uploadSession } from '@ui/helpers/session'
 import { useToast } from '@ui/components/ui/use-toast'
-import { verifyToken } from '@ui/helpers/token'
+import { generateSidToken, verifyToken } from '@ui/helpers/token'
 import { host } from '@ui/const/host'
 import { auth, db } from '@ui/utils/app'
 import { Toaster } from '@ui/components/ui/toaster'
+import { v4 } from 'uuid'
 const SessionWatcher = () => {
+  const path = usePathname()
+  const [sid, setSID] = useLocalStorageState<string | null>( 'sid', { defaultValue: null } );
   const [uid, setUid] = useCookieState('uid');
-  const [sid] = useLocalStorageState<string | null>( 'sid', { defaultValue: null } );
   const [user, loading] = useAuthState(auth)
   const session = useAppSelector(state => state.watcher.session)
   const dispatch = useAppDispatch()
@@ -25,6 +27,20 @@ const SessionWatcher = () => {
   const tokenParam = params.get('token')
   const handleUploadSession = useCallback(async() => await uploadSession(session), [session])
   const { toast } = useToast()
+  const generateSession = async() => {
+    const newSID = v4()
+    const session: Session = {
+      sid: newSID,
+      disabled: false,
+      uid: null,
+      uids: []
+    }
+    const token = generateSidToken(session)
+    if (token) {
+      setSID(token)
+      return session
+    } else return null
+  }
   const setLocalSession = async(sid: string) => {
     const extractedSession = await verifyToken(sid) as { sid: string } | null
     if (extractedSession) {
@@ -58,7 +74,12 @@ const SessionWatcher = () => {
           res(db_session.data() as Session)
         } else res(null)
       } else res(null)
-    } else res(null)
+    } else {
+      if (path === '/auth/signin' || path === '/auth/signup') {
+        const newSession = await generateSession()
+        res(newSession)
+      }
+    }
   })
   const manipulateSession = () => new Promise(async(res, ref) => {
     if (!loading && session.sid !== '') {

@@ -2,6 +2,11 @@ import { Session } from "@ui/types/index";
 import { db } from "@ui/utils/app";
 import { doc, runTransaction } from "firebase/firestore"
 
+export const uidUnionChecker = (uid: string, uids: string[]) => {
+    if (uids.includes(uid)) return uids
+    return [...uids, uid]
+}
+
 export const uploadSession = async(session: Session) => {
     if (session.sid) {
         const sessionRef = doc(db, 'sessions', session.sid)

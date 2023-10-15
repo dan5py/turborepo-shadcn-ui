@@ -5,7 +5,7 @@ import dm from '@ui/assets/dm.svg'
 import { Button } from "@ui/components/ui/button"
 import { auth } from "@ui/utils/app"
 import { useAuthState } from "react-firebase-hooks/auth"
-import { BiGridAlt, BiLoaderAlt, BiLogOut, BiUser } from "react-icons/bi"
+import { BiGridAlt, BiLogOut, BiUser } from "react-icons/bi"
 import Avatar from '@ui/components/shared/Avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@ui/components/ui/dropdown-menu'
 import { useAppDispatch, useAppSelector } from "../store/store"
@@ -22,8 +22,6 @@ const UserSection = () => {
     const isSub = useAppSelector(state => state.user.isSubscriber)
     const session = useAppSelector(state => state.watcher.session)
     const dispatch = useAppDispatch()
-    const redirect_url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://darkmaterial.space'
-    const authLink = `https://auth.darkmaterial.space/auth/signin?back_url=${redirect_url}`
     const getSignOut = () => {
         const updatedSession: Session = {
             ...session,
@@ -34,7 +32,7 @@ const UserSection = () => {
     }
     if (loading) return <div className="rounded-full shrink-0 animate-pulse w-9 h-9 bg-neutral-900"/>
     if (!user) return (
-        <Link href={authLink}><Button><BiUser className='mr-1' size={15} />Войти</Button></Link>
+        <Link href='/auth/signin'><Button><BiUser className='mr-1' size={15} />Войти</Button></Link>
     )
     return (
         <DropdownMenu>
