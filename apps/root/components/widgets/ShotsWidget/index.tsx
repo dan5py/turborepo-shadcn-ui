@@ -25,7 +25,7 @@ type Props = {
 const ShotsWidget = async({ hideNav=false }: Props) => {
     const shots = await getPopularChunk()
     return (
-        <div className='flex flex-col w-full gap-4 h-fit'>
+        <div className='flex flex-col w-full gap-4 px-4 h-fit'>
             {
                 hideNav === false &&
                 <div className="flex items-center justify-center w-full gap-4 h-fit">
