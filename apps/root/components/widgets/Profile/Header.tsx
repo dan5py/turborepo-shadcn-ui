@@ -1,10 +1,8 @@
 'use client'
-import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useLayoutEffect, useState } from 'react'
-import { BiChevronLeft, BiSearch } from 'react-icons/bi'
+import { BiSearch } from 'react-icons/bi'
 import { Input } from '@ui/components/ui/input'
-import UserSection from '@/components/entities/user'
 import { Tabs, TabsList, TabsTrigger } from '@ui/components/ui/tabs'
 
 const Header = () => {

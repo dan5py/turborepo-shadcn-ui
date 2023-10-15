@@ -17,7 +17,7 @@ const HeaderNav = () => {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/membership" passHref>
+                        <Link href="/plus" passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             DM+
                             </NavigationMenuLink>
