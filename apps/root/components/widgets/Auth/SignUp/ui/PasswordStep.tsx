@@ -9,6 +9,7 @@ import { Button } from '@ui/components/ui/button'
 import { auth } from '@ui/utils/app'
 import { Input } from '@ui/components/ui/input'
 import { uidUnionChecker } from '@ui/helpers/session'
+import { BiLoaderAlt } from 'react-icons/bi'
 const PasswordStep = () => {
     const [
         createUserWithEmailAndPassword,
@@ -38,8 +39,11 @@ const PasswordStep = () => {
     }
     return (
         <div className='flex flex-col justify-between w-full h-full'>
-            <Input placeholder='Пароль' value={form.password} onChange={e => dispatch(setPassword(e.target.value))} />
-            <div className="w-full"><Button onClick={signUp} disabled={disabled} className='w-full'>Продолжить</Button></div>
+            <Input placeholder='Пароль' onKeyUp={e => e.key === 'Enter' && signUp()}
+            value={form.password} onChange={e => dispatch(setPassword(e.target.value))} />
+            <div className="w-full"><Button onClick={signUp} disabled={disabled} className='w-full'>
+            { loading && <BiLoaderAlt className='animate-spin' /> }
+            Продолжить</Button></div>
         </div>
     )
 }

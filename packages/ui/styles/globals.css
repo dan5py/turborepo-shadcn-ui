@@ -100,6 +100,9 @@
     border-radius: 9999px;
     @apply bg-neutral-900;
   }
+  ::selection {
+    @apply bg-white text-black
+  }
 }
 
 .shots_mini_grid {

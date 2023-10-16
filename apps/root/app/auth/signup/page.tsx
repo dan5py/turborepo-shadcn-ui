@@ -2,8 +2,8 @@
 import { useAppSelector } from '@/components/entities/store/store'
 import Failed from '@/components/widgets/Auth/Result/ui/Failed'
 import Success from '@/components/widgets/Auth/Result/ui/Success'
-import EmailStep from '@/components/widgets/Auth/SignIn/ui/EmailStep'
-import PasswordStep from '@/components/widgets/Auth/SignIn/ui/PasswordStep'
+import EmailStep from '@/components/widgets/Auth/SignUp/ui/EmailStep'
+import PasswordStep from '@/components/widgets/Auth/SignUp/ui/PasswordStep'
 import StatusBlock from '@/components/widgets/Auth/StatusBlock'
 
 

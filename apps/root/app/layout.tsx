@@ -9,7 +9,8 @@ import TokenWatcher from '@ui/components/entities/session/token.watcher'
 import SessionPicker from '@ui/components/widgets/SessionPicker'
 
 export const metadata: Metadata = {
-  title: 'Dark Material'
+  title: 'Dark Material',
+  icons: ['@ui/assets/dm.svg']
 }
 
 export default function RootLayout({

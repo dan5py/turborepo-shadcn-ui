@@ -10,6 +10,7 @@ import { ShortUserData } from '@ui/types'
 import { host } from '@ui/const/host'
 import { Button } from '@ui/components/ui/button'
 import { Input } from '@ui/components/ui/input'
+import { BiLoaderAlt } from 'react-icons/bi'
 
 const EmailStep = () => {
     const params = useSearchParams()
@@ -40,14 +41,18 @@ const EmailStep = () => {
     return (
         <div className='flex flex-col justify-between w-full h-full'>
             <div className="w-full h-full">
-                <Input onChange={e => dispatch(setEmail(e.target.value))} value={form.email} placeholder='Почта' />
+                <Input onChange={e => dispatch(setEmail(e.target.value))} 
+                onKeyUp={e => e.key === 'Enter' && checkUserExist()} value={form.email} placeholder='Почта' />
             </div>
             <div className="flex flex-col w-full gap-2 mt-auto h-fit">
                 <div className="flex items-center justify-center w-full gap-2 h-fit">
                     <Link href={`/auth/signin?${params.toString()}`} className="text-xs text-neutral-400">Уже есть аккаунт?</Link>
                 </div>
-                <div className="w-full h-fit ">
-                    <Button className='w-full' onClick={checkUserExist} disabled={conditionForDisabled}>Продолжить</Button>
+                <div className="w-full h-fit">
+                    <Button className='w-full' onClick={checkUserExist} disabled={conditionForDisabled}>
+                        { loading && <BiLoaderAlt className='animate-spin' /> }
+                        Продолжить
+                    </Button>
                 </div>
             </div>
         </div>

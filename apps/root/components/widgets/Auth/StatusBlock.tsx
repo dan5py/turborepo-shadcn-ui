@@ -14,6 +14,7 @@ import { Button } from '@ui/components/ui/button'
 import { auth } from '@ui/utils/app'
 import dm from '@ui/assets/dm.svg'
 import bum from '@ui/assets/bum.svg'
+import fallbackImg from '@ui/assets/EmptyUser.svg'
 import { useSearchParams } from 'next/navigation'
 
 const StatusBlock = () => {
@@ -41,20 +42,20 @@ const StatusBlock = () => {
         return (
             <div className="relative flex items-center justify-center w-full h-24 gap-3 p-3 border shrink-0 rounded-xl bg-neutral-900 border-neutral-700">
                 <div className="flex items-center gap-3 w-fit h-fit">
-                    <Avatar src={user.photoURL || null} size={36} />
+                    <Avatar src={user?.photoURL} fallbackImage={fallbackImg} size={36} />
                     <div className="flex flex-col gap-0 w-fit h-fit">
                         <span className='text-sm font-bold line-clamp-1 text-neutral-300 text-start'>{user.displayName || 'Пользователь'}</span>
                         <span className='text-xs line-clamp-1 text-neutral-400 text-start'>{user.email}</span>
                     </div>
                 </div>
-                <Button onClick={logOut} className='!px-2'><BiLogOut size={17} /></Button>
+                <Button onClick={logOut} size='icon'><BiLogOut size={17} /></Button>
             </div>
         )
     }
     if (userInProcess) {
         return (
             <div className="relative flex items-center justify-center w-full h-24 gap-3 p-3 border shrink-0 rounded-xl bg-neutral-900 border-neutral-700">
-                <Avatar src={userInProcess.photoUrl || null} size={36} />
+                <Avatar src={userInProcess?.photoUrl} fallbackImage={fallbackImg} size={36} />
                 <div className="flex flex-col gap-0 w-fit h-fit">
                     <span className='text-sm font-bold text-neutral-300 text-start'>{userInProcess.displayName || 'Пользователь'}</span>
                     <span className='text-xs text-neutral-400 text-start'>{userInProcess.email}</span>
@@ -65,11 +66,13 @@ const StatusBlock = () => {
     return (
         <div className="relative flex items-center justify-center w-full h-24 gap-3 p-3 border shrink-0 rounded-xl bg-neutral-900 border-neutral-700">
             <Image src={dm} width={36} height={36} alt='id-logo' />
-            <BiRightArrowAlt size={25} className='text-neutral-400' />
             {
-                 back_url && back_url.includes('bum.darkmaterial.space')
-                ? <Image src={bum} width={36} height={36} alt='id-logo' />
-                : <Image src={dm} width={36} height={36} alt='id-logo' />
+                back_url && back_url.includes('bum.darkmaterial.space')
+                ? <>
+                    <BiRightArrowAlt size={25} className='text-neutral-400' />
+                    <Image src={bum} width={36} height={36} alt='id-logo' />
+                </>
+                : null
             }
         </div>
     )
