@@ -22,18 +22,19 @@ const Success = () => {
                 await uploadSession(session)
                 const url = back_url ? `${back_url}?token=${sidToken}` : `https://darkmaterial.space?token=${sidToken}`
                 const token = await verifyToken(sidToken) as { sid: string } | null
-                if (token && token.sid) router.push(url)
+                if (token && token.sid) res(url)
             }
         } else {
             if (sidToken && session.uid) {
                 await uploadSession(session)
                 const token = await verifyToken(sidToken) as { sid: string } | null
-                if (token && token.sid) router.push('/')
+                if (token && token.sid) res('/')
             }
         }
     })
     useLayoutEffect(() => {
         startRedirect()
+        .then((url: string | undefined) => url ? router.push(url) : null)
     },[])
     useLayoutEffect(() => {
         if (!user) dispatch(setStep('email'))

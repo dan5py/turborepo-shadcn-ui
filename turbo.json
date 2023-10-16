@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["NODE_ENV"],
+  "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_JWT_SECRET", "NEXT_PUBLIC_TOKEN"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
