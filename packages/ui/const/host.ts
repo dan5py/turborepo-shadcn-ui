@@ -1,1 +1,1 @@
-export const host = 'https://api.darkmaterial.space'
+export const host = 'http://localhost:8000' // 'https://api.darkmaterial.space'

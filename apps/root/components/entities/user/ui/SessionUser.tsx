@@ -6,6 +6,8 @@ import { setSession } from '@ui/components/entities/session/session'
 import { host } from '@ui/const/host'
 import Avatar from '@ui/components/shared/Avatar'
 import fallbackImg from '@ui/assets/EmptyUser.svg'
+import { motion } from 'framer-motion'
+
 type Props = {
     setExpand: React.Dispatch<React.SetStateAction<boolean>>
     uid: string
@@ -66,14 +68,14 @@ const SessionUser = ({ uid, setExpand }: Props) => {
                         <BiLoaderAlt size={32} className='animate-spin' />
                     </div>
                     : isSelected && 
-                    <div className="absolute top-0 left-0 flex items-center justify-center w-8 h-8 bg-green-600 rounded-full">
+                    <motion.div initial={{ scale: .25, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="absolute top-0 left-0 flex items-center justify-center w-8 h-8 bg-green-600 rounded-full">
                         <BiCheck className='text-white shrink-0' width={28} height={28} />
-                    </div>
+                    </motion.div>
                 }
             </div>
             <div className="flex flex-col w-full h-full">
-                <span className='text-sm font-semibold text-neutral-200'>{userData?.displayName}</span>
-                <span className='text-xs text-neutral-400'>{userData?.email}</span>
+                <span className='text-sm font-semibold line-clamp-1 text-neutral-200'>{userData?.displayName}</span>
+                <span className='text-xs line-clamp-1 text-neutral-400'>{userData?.email}</span>
             </div>
         </div>
     )

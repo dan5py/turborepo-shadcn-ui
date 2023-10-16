@@ -45,16 +45,17 @@ const UserSection = () => {
                 <DropdownMenuLabel className='flex flex-col justify-center w-full pt-0'>
                     <div className="flex items-center w-full gap-1 h-fit">
                         <span className='text-base font-semibold text-neutral-200 line-clamp-1'>{user.displayName || 'Пользователь'}</span>
-                        { isSub && <SubLabel mini /> }
                     </div>
                     <span className='text-xs font-normal text-neutral-400 line-clamp-1'>{user.email}</span>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator/>
                 <Link href='/profile'><DropdownMenuItem><BiUser className='mr-2' />Профиль</DropdownMenuItem></Link>
-                <DropdownMenuItem><BiGridAlt className='mr-2' />Приложения</DropdownMenuItem>
+                {/* <DropdownMenuItem><BiGridAlt className='mr-2' />Приложения</DropdownMenuItem> */}
                 <SessionSection />
                 <DropdownMenuSeparator/>
-                    <DropdownMenuItem><Image src={dm} width={16} className="mr-1" height={16} alt='dm-logo' /><span>DarkMaterial</span><MdOutlineOpenInNew className='ml-auto' /></DropdownMenuItem>
+                    <Link href='https://darkmaterial.space'>
+                        <DropdownMenuItem><Image src={dm} width={16} className="mr-1" height={16} alt='dm-logo' /><span>DarkMaterial</span><MdOutlineOpenInNew className='ml-auto' /></DropdownMenuItem>
+                    </Link>
                     <DropdownMenuItem onClick={getSignOut}><BiLogOut className='mr-2' />Выйти из профиля</DropdownMenuItem>
                 <DropdownMenuSeparator/>
                 {
