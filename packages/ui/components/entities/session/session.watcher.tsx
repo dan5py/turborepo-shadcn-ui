@@ -65,7 +65,7 @@ const SessionWatcher = () => {
     process.env.NODE_ENV === 'development' && console.info(session.sid, session?.uid, user?.uid, sid)
   },[session, sid, user?.uid])
   const getCatchSession = (): Promise<Session | null> => new Promise(async(res, rej) => {
-    if (sid && !tokenParam) {
+    if (sid) {
       const local_session = await setLocalSession(sid)
       if (local_session && local_session.sid) {
       const sessionRef = doc(db, 'sessions', local_session.sid)
@@ -75,10 +75,8 @@ const SessionWatcher = () => {
         } else res(null)
       } else res(null)
     } else {
-      if (path === '/auth/signin' || path === '/auth/signup') {
-        const newSession = await generateSession()
-        res(newSession)
-      }
+      const newSession = await generateSession()
+      res(newSession)
     }
   })
   const manipulateSession = () => new Promise(async(res, ref) => {
@@ -104,22 +102,32 @@ const SessionWatcher = () => {
     }
   })
   useDebounceEffect(() => {
-    if (!isEqual(debouncedSession, session) && session.sid) {
-      console.log('Session is need update')
-      handleUploadSession()
-      .finally(() => {
-        dispatch(setSession(session))
-        setDebouncedSession(session)
-      })
-    } else console.log('Session is not need update')
-  }, [session], { wait: 1000 })
+    if (!debouncedSession) {
+        handleUploadSession()
+        .finally(() => {
+          setDebouncedSession(session)
+        })
+    } else {
+      if (!isEqual(debouncedSession, session) && session.sid) {
+        console.log('Session is need update')
+        handleUploadSession()
+        .finally(() => {
+          setDebouncedSession(session)
+        })
+      } else console.log('Session is not need update')
+    }
+
+  }, [session, debouncedSession], { wait: 1000 })
   useLayoutEffect(() => {
     manipulateSession()
   }, [session.uid, user])
   useLayoutEffect(() => {
     getCatchSession()
-    .then(session => session && dispatch(setSession(session)))
-  }, [session.sid, sid, tokenParam])
+    .then(session => {
+      console.log(session)
+      if (session) dispatch(setSession(session))
+    })
+  }, [session.sid, sid, tokenParam, path])
   useLayoutEffect(() => {
     if (session.sid) {
       const sessionRef = doc(db, 'sessions', session.sid)

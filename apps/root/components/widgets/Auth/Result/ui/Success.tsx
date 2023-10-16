@@ -17,6 +17,7 @@ const Success = () => {
     const router = useRouter()
     const startRedirect = () => new Promise(async(res, ref) => {
         const sidToken = generateSidToken(session)
+        console.log(sidToken, session)
         if (back_url) {
             if (sidToken && session.uid) {
                 await uploadSession(session)
@@ -34,7 +35,12 @@ const Success = () => {
     })
     useLayoutEffect(() => {
         startRedirect()
-        .then((url: string | undefined) => url ? router.push(url) : null)
+        .then((url: string | undefined) => {
+            console.log(url)
+            if (url) {
+                router.push(url)
+            } 
+        })
     },[])
     useLayoutEffect(() => {
         if (!user) dispatch(setStep('email'))
