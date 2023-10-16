@@ -1,9 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalDotEnv": [".env"],
   "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_JWT_SECRET", "NEXT_PUBLIC_TOKEN"],
   "pipeline": {
     "build": {
+      "dotEnv": [".env"],
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },

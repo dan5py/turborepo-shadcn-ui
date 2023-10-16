@@ -1,6 +1,6 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
+  "include": [".", "../../apps/root/helpers/plus.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
