@@ -29,6 +29,10 @@ const PersonalEditPage = () => {
                 formData.append('file', file)
                 const postedFetched = await fetch(postUrl, { method: 'POST', body: formData })
                 if (postedFetched.ok) {
+                    if (user.photoURL) {
+                        const oldUrl = `${host}/files/file?link=${user.photoURL}`
+                        await fetch(oldUrl, { method: 'DELETE' })
+                    }
                     const res = await postedFetched.json()
                     const cdn_url = `https://cdn.darkmaterial.space/${res}`
                     await updateProfile(user, { photoURL: cdn_url })
