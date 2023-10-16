@@ -6,7 +6,13 @@ type Props = {
 }
 const BlogLayout = ({ children }: Props) => {
     return (
-        <div className='flex flex-col w-full gap-8 pt-12 mx-auto max-w-7xl'>
+        <div className='relative flex flex-col w-full gap-8 pt-12 mx-auto max-w-7xl'>
+            {
+                process.env.NODE_ENV === 'development' &&
+                <div className="absolute top-0 left-0 z-50 flex flex-col items-center justify-center w-full h-full backdrop-blur">
+                    <span>Страница в разработке...</span>
+                </div>
+            }
             <div className="flex items-center w-full h-fit">
                 <Tabs defaultValue="all">
                     <TabsList className="grid w-full grid-cols-2">

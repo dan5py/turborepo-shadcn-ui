@@ -56,7 +56,7 @@ const SessionPage = () => {
                 <h2 className='text-lg font-semibold text-neutral-200'>Текущая сессия</h2>
                 <div className="flex flex-col w-full gap-4 h-fit">
                     {
-                        session.uids.map(uid => <SessionUser onClick={() => removeUserFromCurrentSession(uid)} uid={uid} />)
+                        session.uids.map(uid => <SessionUser key={uid + session.sid} onClick={() => removeUserFromCurrentSession(uid)} uid={uid} />)
                     }
                 </div>
             </div>
@@ -68,7 +68,7 @@ const SessionPage = () => {
                         otherSessions.map(session => <div key={session.sid} className='flex flex-col w-full gap-2 p-4 h-fit'>
                             <div className="flex flex-col w-full gap-4 h-fit">
                                 {
-                                    session.uids.filter(uid => user ? user.uid === uid : false).map(uid => <SessionUser uid={uid} onClick={() => removeFromRemoteSession(session.sid, uid)} />)
+                                    session.uids.filter(uid => user ? user.uid === uid : false).map(uid => <SessionUser key={uid + session.sid} uid={uid} onClick={() => removeFromRemoteSession(session.sid, uid)} />)
                                 }
                                 { session.uids.length > 1 ? <span className='text-xs text-neutral-400'>И ещё {session.uids.length - 1} пользователь(-ля)</span> : null }
                             </div>
