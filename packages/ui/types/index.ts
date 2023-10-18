@@ -7,10 +7,10 @@ export type PromoCodeWithId = { id: string } & PromoCode
 export type TextBlock = {
     type: 'text'
     text: string
-    size: 0 | 1 | 2 | 3
-    align: 'left' | 'center' | 'right',
-    isBold: boolean
-    isItalic: boolean
+    size?: 0 | 1 | 2 | 3
+    align?: 'left' | 'center' | 'right',
+    isBold?: boolean
+    isItalic?: boolean
 }
 
 export type ImageBlock = {
