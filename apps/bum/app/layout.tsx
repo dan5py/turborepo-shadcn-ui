@@ -6,6 +6,7 @@ import TokenWatcher from '@ui/components/entities/session/token.watcher'
 import SessionPicker from '@ui/components/widgets/SessionPicker'
 import StateProvider from "@/components/StateProvider";
 import SubStatusWatcher from "@/components/entities/user/SubStatus.watcher";
+import AppHeader from "@/components/widgets/AppHeader";
 
 export const metadata: Metadata = {
   title: 'Dark Material',
@@ -25,7 +26,6 @@ export default function RootLayout({
           <TokenWatcher />
           <SubStatusWatcher />
           <SessionPicker />
-          {/* <AppHeader /> */}
           {children}
         </body>
       </html>
