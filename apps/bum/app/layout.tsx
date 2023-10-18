@@ -6,7 +6,9 @@ import TokenWatcher from '@ui/components/entities/session/token.watcher'
 import SessionPicker from '@ui/components/widgets/SessionPicker'
 import StateProvider from "@/components/StateProvider";
 import SubStatusWatcher from "@/components/entities/user/SubStatus.watcher";
-import AppHeader from "@/components/widgets/AppHeader";
+import { Rubik, Spectral } from 'next/font/google'
+const rubik = Rubik({ subsets: ['latin', 'cyrillic'], variable: '--root-font' })
+const spectral = Spectral({ subsets: ['latin', 'cyrillic'], weight: ['600', '400'], variable: '--second-font' })
 
 export const metadata: Metadata = {
   title: 'Dark Material',
@@ -20,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <StateProvider>
-      <html lang="en">
+      <html lang="en" className={`${rubik.className} ${rubik.variable} ${spectral.variable}`}>
         <body className='min-h-screen dark'>
           <SessionWatcher />
           <TokenWatcher />

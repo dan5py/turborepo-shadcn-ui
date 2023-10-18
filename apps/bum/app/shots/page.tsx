@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 import Image from "next/image"
 import { cdn } from "@ui/helpers/cdn"
 import { Input } from "@ui/components/ui/input"
+import Link from "next/link"
 
 export default async function ShotsPage() {
     const allShots = await getAllShot()
@@ -24,7 +25,8 @@ export default async function ShotsPage() {
                 allShots.map(shot => {
                   const stableLink = shot.thumbnail ? shot.thumbnail.link : shot.rootBlock.link
                   return (
-                    <div key={shot.doc_id} className="relative w-full aspect-[4/3] rounded-2xl border border-neutral-700">
+                    <Link href={'/view' + '?s=' + shot.doc_id}
+                    key={shot.doc_id} className="relative w-full aspect-[4/3] rounded-2xl border border-neutral-700">
                       { (stableLink).endsWith('.mp4') && <BiPlay size={21} className="absolute top-4 right-4 text-neutral-200"/> }
                       { 
                         process.env.NODE_ENV === 'development'
@@ -39,7 +41,7 @@ export default async function ShotsPage() {
                           </video>
                           : <Image src={cdn(stableLink)} fill className="object-cover rounded-2xl" alt='img' />
                       }
-                    </div>
+                    </Link>
                   )
                 })
               }
