@@ -10,7 +10,7 @@ type Props = {
 }
 const Ambient = ({ link }: Props) => {
     const isVideo = link.endsWith('.mp4')
-    const mediaBlock = isVideo ? useRef<ElementRef<'video'>>(null) : useRef<ElementRef<'img'>>(null)
+    const mediaBlock = useRef<ElementRef<'video' | 'img'>>(null)
     const canvas = useRef<ElementRef<'canvas'>>(null);
     const isInView = useInView(mediaBlock)
     const FRAMERATE = 24;
