@@ -65,6 +65,9 @@ importers:
       react-redux:
         specifier: ^8.1.3
         version: 8.1.3(@types/react-dom@18.2.13)(@types/react@18.2.28)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
+      react-responsive:
+        specifier: ^9.0.2
+        version: 9.0.2(react@18.2.0)
       remark-breaks:
         specifier: ^4.0.0
         version: 4.0.0
@@ -3741,6 +3744,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
 
+  /css-mediaquery@0.1.2:
+    resolution: {integrity: sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==}
+    dev: false
+
   /cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
@@ -5022,6 +5029,10 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
+  /hyphenate-style-name@1.0.4:
+    resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
+    dev: false
+
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
@@ -5588,6 +5599,12 @@ packages:
   /make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: true
+
+  /matchmediaquery@0.3.1:
+    resolution: {integrity: sha512-Hlk20WQHRIm9EE9luN1kjRjYXAQToHOIAHPJn9buxBwuhfTHoKUcX+lXBbxc85DVQfXYbEQ4HcwQdd128E3qHQ==}
+    dependencies:
+      css-mediaquery: 0.1.2
+    dev: false
 
   /mdast-util-find-and-replace@3.0.1:
     resolution: {integrity: sha512-SG21kZHGC3XRTSUhtofZkBzZTJNM5ecCi0SK2IMKmSXR8vO3peL+kb1O0z7Zl83jKtutG4k5Wv/W7V3/YHvzPA==}
@@ -6660,6 +6677,19 @@ packages:
       use-sidecar: 1.1.2(@types/react@18.2.28)(react@17.0.2)
     dev: false
 
+  /react-responsive@9.0.2(react@18.2.0):
+    resolution: {integrity: sha512-+4CCab7z8G8glgJoRjAwocsgsv6VA2w7JPxFWHRc7kvz8mec1/K5LutNC2MG28Mn8mu6+bu04XZxHv5gyfT7xQ==}
+    engines: {node: '>=0.10'}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      hyphenate-style-name: 1.0.4
+      matchmediaquery: 0.3.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      shallow-equal: 1.2.1
+    dev: false
+
   /react-style-singleton@2.2.1(@types/react@18.2.28)(react@17.0.2):
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}
     engines: {node: '>=10'}
@@ -6941,6 +6971,10 @@ packages:
       define-data-property: 1.1.0
       functions-have-names: 1.2.3
       has-property-descriptors: 1.0.0
+
+  /shallow-equal@1.2.1:
+    resolution: {integrity: sha512-S4vJDjHHMBaiZuT9NPb616CSmLf618jawtv3sufLl6ivK8WocjAo58cXwbRV1cgqxH0Qbv+iUt6m05eqEa2IRA==}
+    dev: false
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
