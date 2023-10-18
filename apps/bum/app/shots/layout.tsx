@@ -18,7 +18,7 @@ const ShotsLayout = ({ children }: Props) => {
                 </div>
                 <div className="flex flex-col w-full gap-4 h-fit">
                     <CategoryAndOrder />
-                    <main className="grid w-full px-4 py-4 h-fit shots_grid gap-9">
+                    <main className="grid w-full px-4 py-4 h-fit shots_grid gap-9 lg:px-20 md:px-12">
                         {children}
                     </main>
                 </div>
