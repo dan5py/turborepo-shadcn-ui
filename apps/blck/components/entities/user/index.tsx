@@ -32,7 +32,7 @@ const UserSection = () => {
     }
     if (loading) return <div className="rounded-full shrink-0 animate-pulse w-9 h-9 bg-neutral-900"/>
     if (!user) return (
-        <Link href='/auth/signin'><Button><BiUser className='mr-1' size={15} />Войти</Button></Link>
+        <Link href='/auth/signin'><Button size='icon'><BiUser className='mr-1' size={15} /></Button></Link>
     )
     return (
         <DropdownMenu>
