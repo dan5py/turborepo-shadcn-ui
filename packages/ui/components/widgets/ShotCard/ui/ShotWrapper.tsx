@@ -1,11 +1,11 @@
 import { DocShotData } from '@ui/types/index'
-import { Suspense } from 'react'
+import { Suspense, ReactNode } from 'react'
 import { BiPlay } from 'react-icons/bi'
 import ShotInfo from './ShotInfo'
 
 
 type Props = {
-    children: React.ReactNode
+    children: ReactNode
     shot: DocShotData
 }
 const ShotWrapper = ({ children, shot }: Props) => {
