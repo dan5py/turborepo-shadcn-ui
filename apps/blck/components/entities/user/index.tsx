@@ -32,13 +32,13 @@ const UserSection = () => {
     }
     if (loading) return <div className="rounded-full shrink-0 animate-pulse w-9 h-9 bg-neutral-900"/>
     if (!user) return (
-        <Link href='/auth/signin'><Button size='icon'><BiUser className='mr-1' size={15} /></Button></Link>
+        <Link href={signInLink}><Button size='icon'><BiUser className='mr-1' size={15} /></Button></Link>
     )
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
                 <div>
-                    <Avatar size={36} isSub={isSub || false} src={user?.photoURL} fallbackImage={empty} />
+                    <Avatar size={36} isSub={isSub || false} noLabel src={user?.photoURL} fallbackImage={empty} />
                 </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="p-4 w-60 rounded-xl">

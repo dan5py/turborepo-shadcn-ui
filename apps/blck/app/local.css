@@ -1,3 +1,11 @@
 .wrapper_under_header {
     min-height: calc(100dvh - 80px);
 }
+
+.dashboard_grid {
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+}
+
+.wrapper_with_sidebar {
+    width: calc( 100% - 64px );
+}
