@@ -11,7 +11,7 @@ const rubik = Rubik({ subsets: ['latin', 'cyrillic'], variable: '--root-font' })
 const spectral = Spectral({ subsets: ['latin', 'cyrillic'], weight: ['600', '400'], variable: '--second-font' })
 
 export const metadata: Metadata = {
-  title: 'Dark Material',
+  title: 'blck',
   icons: ['@ui/assets/dm.svg']
 }
 

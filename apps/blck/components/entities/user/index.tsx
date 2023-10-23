@@ -21,6 +21,7 @@ const UserSection = () => {
     const isSub = useAppSelector(state => state.user.isSubscriber)
     const session = useAppSelector(state => state.watcher.session)
     const dispatch = useAppDispatch()
+    const signInLink = process.env.NODE_ENV === 'development' ? 'https://darkmaterial.space/auth/signin?back_url=http://localhost:3000' : 'https://darkmaterial.space/auth/signin?back_url=https://blck.darkmaterial.space'
     const getSignOut = () => {
         const updatedSession: Session = {
             ...session,
