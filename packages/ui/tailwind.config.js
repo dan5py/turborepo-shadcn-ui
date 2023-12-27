@@ -5,7 +5,7 @@ module.exports = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "../../packages/ui/components/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
