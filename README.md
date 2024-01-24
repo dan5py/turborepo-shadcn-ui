@@ -1,6 +1,6 @@
-# Turborepo starter with shadcn/ui#
+# Turborepo starter with shadcn/ui
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-latest-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
+![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 
 This is Turborepo starter with shadcn/ui pre-configured.
 
@@ -42,9 +42,9 @@ This Turborepo includes the following packages/apps:
 
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications (🚀 powered by **shadcn/ui**)
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications (🚀 powered by **shadcn/ui**)
+- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

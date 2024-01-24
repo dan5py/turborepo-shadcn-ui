@@ -1,10 +1,9 @@
-import { Button } from "@ui/components/button";
+import { Button } from "@repo/ui/components/button";
 
 export default function Page() {
   return (
-    <>
-      <h1>Docs</h1>
+    <main>
       <Button>Click me</Button>
-    </>
+    </main>
   );
 }
