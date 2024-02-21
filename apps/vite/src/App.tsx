@@ -1,35 +1,22 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 import { Button } from "@repo/ui/components/ui/button";
+
+import "@repo/ui/globals.css";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+    <div className="container mx-auto p-4">
+      <h1 className="text-xl font-bold mb-2">This is a Vite application</h1>
+      <p className="mb-4">
+        This shadcn/ui button is shared between Vite, NextJS and any other
+        application.{" "}
       </p>
-    </>
+      <Button onClick={() => setCount((count) => count + 1)}>
+        count is {count}
+      </Button>
+    </div>
   );
 }
 
