@@ -1,26 +1,26 @@
-# Turborepo starter with shadcn/ui
+# Praxis Monorepo
+
+The Praxis monorepo is an open-source project that combines the shared infrastructure of Next.js 14+ applications. It utilizes the ShadCN UI library and Tailwind CSS to build and deploy functional and user-friendly AI-powered web applications.
+
+This project simply aims to function as a blueprint for connecting agentic-like flows across multiple AI-powered mini apps. The goal is to enrich user experience, productivity, and AI feature efficiency.
 
 ![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 
-This is Turborepo starter with shadcn/ui pre-configured.
-
 > [!NOTE]
 > This example uses `npm` as package manager.
-
-[pnpm version](https://github.com/dan5py/turborepo-shadcn-ui)
 
 ## Using this example
 
 Clone the repository:
 
 ```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui.git --branch npm
+git clone https://github.com/CalvinMagezi/praxis-monorepo.git --branch npm
 ```
 
 Install dependencies:
 
 ```sh
-cd turborepo-shadcn-ui
+cd praxis-monorepo
 npm install
 ```
 

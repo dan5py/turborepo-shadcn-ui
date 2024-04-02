@@ -1,15 +1,54 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "OPENAI_API_KEY",
+    "SERPER_API_KEY",
+    "STRIPE_API_KEY",
+    "UNSPLASH_API_KEY",
+    "YOUTUBE_API_KEY",
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ],
+      "env": [
+        "OPENAI_API_KEY",
+        "SERPER_API_KEY",
+        "STRIPE_API_KEY",
+        "UNSPLASH_API_KEY",
+        "YOUTUBE_API_KEY",
+        "NEXT_PUBLIC_SUPABASE_URL",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
     "dev": {
+      "dotEnv": [
+        ".env.development.local",
+        ".env.local",
+        ".env.development",
+        ".env"
+      ],
+      "env": [
+        "OPENAI_API_KEY",
+        "SERPER_API_KEY",
+        "STRIPE_API_KEY",
+        "UNSPLASH_API_KEY",
+        "YOUTUBE_API_KEY",
+        "NEXT_PUBLIC_SUPABASE_URL",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY"
+      ],
       "cache": false,
       "persistent": true
     }
