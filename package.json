@@ -7,7 +7,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "npm run -w @repo/ui ui:add --"
+    "ui": "npm run -w @repo/ui ui --"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

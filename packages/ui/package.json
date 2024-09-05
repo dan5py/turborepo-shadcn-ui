@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "ui:add": "npx shadcn-ui@latest add",
+    "ui": "npx shadcn@latest",
     "lint": "eslint ."
   },
   "peerDependencies": {
@@ -33,6 +33,10 @@
     "./postcss.config": "./postcss.config.mjs",
     "./tailwind.config": "./tailwind.config.ts",
     "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/*.tsx"
+    "./hooks/*": "./src/hooks/*.ts",
+    "./components/*": [
+      "./src/components/*.tsx",
+      "./src/components/*.ts"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 # Turborepo starter with shadcn/ui
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
+![Static Badge](https://img.shields.io/badge/shadcn-2.0.3-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 
 This is Turborepo starter with shadcn/ui pre-configured.
 
@@ -29,10 +29,10 @@ npm install
 Use the pre-made script:
 
 ```sh
-npm run ui:add <component-name> -- <options>
+npm ui add <component-name> -- <options>
 ```
 
-> This works just like the add command in the `shadcn/ui` CLI.
+> This works just like the `shadcn/ui` CLI.
 
 ### Add a new app
 
@@ -60,8 +60,7 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications (🚀 powered by **shadcn/ui**)
+- `@repo/ui`: a stub React component library (🚀 powered by **shadcn/ui**)
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
