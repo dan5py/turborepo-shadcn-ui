@@ -8,6 +8,7 @@ This is Turborepo starter with shadcn/ui pre-configured.
 > This example uses `pnpm` as package manager.
 
 [npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
+[bun version](https://github.com/dan5py/turborepo-shadcn-ui/tree/bun)
 
 ## Using this example
 
