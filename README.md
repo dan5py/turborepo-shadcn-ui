@@ -5,8 +5,9 @@
 This is Turborepo starter with shadcn/ui pre-configured.
 
 > [!NOTE]
-> This example uses `pnpm` as package manager.
+> This example uses `bun` as package manager.
 
+[pnpm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/main)
 [npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
 
 ## Using this example
@@ -21,7 +22,7 @@ Install dependencies:
 
 ```sh
 cd turborepo-shadcn-ui
-pnpm install
+bun install
 ```
 
 ### Add ui components
@@ -29,7 +30,7 @@ pnpm install
 Use the pre-made script:
 
 ```sh
-pnpm ui add <component-name>
+bun ui add <component-name>
 ```
 
 > This works just like the `shadcn/ui` CLI.
@@ -39,7 +40,7 @@ pnpm ui add <component-name>
 Turborepo offer a simple command to add a new app:
 
 ```sh
-pnpm turbo gen workspace --name <app-name>
+bun turbo gen workspace --name <app-name>
 ```
 
 This will create a new empty app in the `apps` directory.
@@ -47,11 +48,11 @@ This will create a new empty app in the `apps` directory.
 If you want, you can copy an existing app with:
 
 ```sh
-pnpm turbo gen workspace --name <app-name> --copy
+bun turbo gen workspace --name <app-name> --copy
 ```
 
 > [!NOTE]
-> Remember to run `pnpm install` after copying an app.
+> Remember to run `bun install` after copying an app.
 
 ## What's inside?
 
@@ -80,7 +81,7 @@ To build all apps and packages, run the following command:
 
 ```sh
 cd turborepo-shadcn-ui
-pnpm build
+bun build
 ```
 
 ### Develop
@@ -89,7 +90,7 @@ To develop all apps and packages, run the following command:
 
 ```sh
 cd turborepo-shadcn-ui
-pnpm dev
+bun dev
 ```
 
 ### Remote Caching

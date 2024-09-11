@@ -8,7 +8,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui": "pnpm --filter @repo/ui ui"
+    "ui": "bun --filter @repo/ui ui"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -16,8 +16,12 @@
     "prettier": "^3.3.3",
     "turbo": "2.1.1"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "bun@1.1.27",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "workspaces": [
+    "./apps/*",
+    "./packages/*"
+  ]
 }
