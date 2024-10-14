@@ -12,19 +12,19 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react18",
     "autoprefixer": "^10",
     "postcss": "^8",
     "postcss-load-config": "^6",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5"
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.395.0",
+    "lucide-react": "catalog:",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
