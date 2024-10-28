@@ -1,6 +1,6 @@
 # Turborepo starter with shadcn/ui
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-0.8.0-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
+![Static Badge](https://img.shields.io/badge/shadcn%2Fui-2.1.2-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
 
 This is Turborepo starter with shadcn/ui pre-configured.
 
