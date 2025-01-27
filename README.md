@@ -1,6 +1,3 @@
-> [!WARNING]
-> This repo is no longer mantained since the shadcn CLI [now supports monorepos natively](https://ui.shadcn.com/docs/monorepo), thanks for using the template.
-
 # Turborepo starter with shadcn/ui
 
 ![Static Badge](https://img.shields.io/badge/shadcn%2Fui-2.1.2-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
