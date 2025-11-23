@@ -33,7 +33,8 @@
       "typescript": "^5.9.3",
       "@types/eslint": "^9",
       "next": "16.0.1",
-      "@next/eslint-plugin-next": "16.0.1"
+      "@next/eslint-plugin-next": "16.0.1",
+      "@types/node": "^24"
     },
     "catalogs": {
       "react19": {

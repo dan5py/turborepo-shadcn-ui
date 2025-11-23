@@ -23,6 +23,7 @@
     "@types/react-dom": "catalog:react19",
     "eslint": "catalog:",
     "typescript": "catalog:",
-    "@tailwindcss/postcss": "catalog:"
+    "@tailwindcss/postcss": "catalog:",
+    "@types/node": "catalog:"
   }
 }
