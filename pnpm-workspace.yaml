@@ -3,7 +3,7 @@ packages:
   - "packages/*"
 
 catalog:
-  lucide-react: ^0.552.0
+  lucide-react: ^0.560.0
   tailwindcss: ^4.1.17
   "@tailwindcss/postcss": ^4.1.17
   eslint: ^9.39.1
@@ -12,12 +12,12 @@ catalog:
   typescript: ^5.9.3
   "@types/node": ^24
   "@types/eslint": ^9
-  next: 16.0.7
-  "@next/eslint-plugin-next": 16.0.7
+  next: 16.0.9
+  "@next/eslint-plugin-next": 16.0.9
 
 catalogs:
   react19:
-    react: ^19.2.1
-    react-dom: ^19.2.1
-    "@types/react": ^19.2.2
-    "@types/react-dom": ^19.2.2
+    react: 19.2.2
+    react-dom: 19.2.2
+    "@types/react": ^19.2
+    "@types/react-dom": ^19.2
