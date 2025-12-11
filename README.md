@@ -1,14 +1,11 @@
 # Turborepo starter with shadcn/ui
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-2.1.2-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
-
 This is Turborepo starter with shadcn/ui pre-configured.
 
 > [!NOTE]
 > This example uses `bun` as package manager.
 
 [pnpm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/main)
-[npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
 
 ## Using this example
 
