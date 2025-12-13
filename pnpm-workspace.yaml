@@ -12,12 +12,12 @@ catalog:
   typescript: ^5.9.3
   "@types/node": ^24
   "@types/eslint": ^9
-  next: 16.0.9
-  "@next/eslint-plugin-next": 16.0.9
+  next: 16.0.10
+  "@next/eslint-plugin-next": 16.0.10
 
 catalogs:
   react19:
-    react: 19.2.2
-    react-dom: 19.2.2
+    react: 19.2.3
+    react-dom: 19.2.3
     "@types/react": ^19.2
     "@types/react-dom": ^19.2
