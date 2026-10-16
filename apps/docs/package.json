@@ -17,6 +17,7 @@
     "react-dom": "catalog:react19"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "catalog:",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "catalog:",
